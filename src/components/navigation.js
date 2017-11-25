@@ -9,21 +9,21 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-      <Sidebar/>
-      <Router>
-        <div>
-          <Switch>
-            <Route path="/" component={Dashboard} />
-          </Switch>
-        </div>
-      </Router>
+        <Sidebar />
+        <Router>
+          <div>
+            <Switch>
+              <Route path="/" component={Dashboard} />
+            </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ }) => {
-  return { };
+const mapStateToProps = ({}) => {
+  return {};
 };
 
 export default connect(mapStateToProps, {})(Navigation);
