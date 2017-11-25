@@ -10,6 +10,8 @@ npm install typeface-roboto --save
 
 npm install material-ui-icons
 
+npm install --save redux
+
 npm install --save react-redux
 
 npm install --save redux-thunk
