@@ -40,7 +40,6 @@ class Login extends Component {
           value={this.state.username}
           onChange={this.handleInputChange("username")}
           autoComplete="current-username"
-          margin="auto"
         />
         <TextField
           fullWidth={true}
