@@ -1,11 +1,13 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import ReduxThunk from 'redux-thunk';
 
+import sidebarReducer from './reducers/sidebarReducer';
 import loginReducer from './reducers/loginReducer';
 
 //all reducers gathered together for the redux storage
 const reducers = combineReducers({
   login:loginReducer,
+  sidebar:sidebarReducer,
 });
 
 //all enhancers gathered together for the redux storage

@@ -18,7 +18,6 @@ import jwt_decode from 'jwt-decode';
        JSONresponse.json().then((response)=>{
          if(JSONresponse.ok){
            let user=jwt_decode(response.token);
-           console.log(user);
            dispatch({
              type: LOGIN_SUCCESS,
              payload: {user,token:response.token}

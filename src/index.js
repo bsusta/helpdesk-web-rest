@@ -10,6 +10,7 @@ const App = () =>
 (<Provider store={store}>
     <Login />
   </Provider>);
-
+  document.body.style.backgroundColor = "lightGray";
+  document.body.style.margin = 0;
 ReactDOM.render(<App />, document.getElementById('root'));
 export default App;
