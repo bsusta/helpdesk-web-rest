@@ -38,7 +38,7 @@ import {processRESTinput} from '../../helperFunctions';
          'Authorization': 'Bearer ' + token
        },
        method: 'PATCH',
-       body:processRESTinput(company),
+       body:processRESTinput(company)+'&is_active='+(company.is_active?'true':'false'),
      })
      .then((response)=>response.json().then((response)=>{
        dispatch({type: EDIT_COMPANY_LIST, company:Object.assign({},company,{id})});
@@ -63,7 +63,7 @@ import {processRESTinput} from '../../helperFunctions';
          'Authorization': 'Bearer ' + token
        },
        method: 'POST',
-       body:processRESTinput(newCompany),
+       body:processRESTinput(newCompany)+'&is_active='+(newCompany.is_active?'true':'false'),
      })
      .then((response1)=>response1.json().then((response2)=>{
        dispatch({type: ADD_COMPANY, company:Object.assign(newCompany,{id:response2.data.id})});

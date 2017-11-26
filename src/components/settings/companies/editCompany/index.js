@@ -7,7 +7,6 @@ import EditCompany from './editCompany';
 class CompanyEditLoader extends Component {
   constructor(props){
     super(props);
-    console.log(this.props.loadingChange);
     this.state={
       currentState:this.props.loadingChange
     };
@@ -22,7 +21,7 @@ class CompanyEditLoader extends Component {
       return(<CircularProgress/>);
     }
     else{
-      return(<EditCompany/>)
+      return(<EditCompany history={this.props.history}/>)
     }
   }
 }
