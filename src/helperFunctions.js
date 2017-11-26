@@ -40,11 +40,11 @@ export const processRESTinput = (input)=>{
     return '';
   }
   let result='';
-  input.map((item)=> {
+  for (let item in input) {
     if(item && input[item] && input[item]!='' ){
       result+=(item+'='+input[item]+'&');
     }
-  });
+  }
   return result.substring(0,result.length-1);
 }
 
@@ -59,11 +59,11 @@ export const processDataWithPrefix = (input,prefix)=>{
     return '';
   }
   let result='';
-  input.map((item)=>{
+  for (let item in input) {
     if(item && input[item] && input[item]!='' ){
       result+=(prefix+'['+item+']='+input[item]+'&');
     }
-  });
+  }
   return result.substring(0,result.length-1);
 }
 /**
