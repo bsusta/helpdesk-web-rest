@@ -8,8 +8,17 @@ import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import SettingsIcon from "material-ui-icons/Settings";
 import { Link } from "react-router-dom";
-
+import Avatar from "material-ui/Avatar";
+import deepOrange from "material-ui/colors/deepOrange";
 import { setSidebar } from "./../../redux/actions";
+
+const styles = {
+  orangeAvatar: {
+    color: "#fff",
+    backgroundColor: deepOrange[500]
+  }
+};
+
 class Topbar extends Component {
   render() {
     return (
@@ -31,6 +40,9 @@ class Topbar extends Component {
               <SettingsIcon />
             </IconButton>
           </Link>
+          <IconButton>
+            <Avatar style={styles.orangeAvatar}>BS</Avatar>
+          </IconButton>
         </Toolbar>
       </AppBar>
     );

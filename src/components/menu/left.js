@@ -30,6 +30,11 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     })
+  },
+  logo: {
+    display: "flex",
+    justifyContent: "center",
+    color: "white"
   }
 });
 
@@ -48,8 +53,22 @@ class Sidebar extends Component {
         }}
       >
         <div>
-          <div style={{ background: "#3f51b5", height: 64 }}>
-            <Typography type="title" color="inherit" style={{ flex: 1 }}>
+          <div
+            style={{
+              background: "#3f51b5",
+              height: 64,
+              display: "flex",
+              alignItems: "center"
+            }}
+          >
+            <Typography
+              type="title"
+              style={{
+                color: "white",
+
+                paddingLeft: 16
+              }}
+            >
               LanHelpdesk
             </Typography>
           </div>
