@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Table, { TableBody, TableCell, TableRow } from "material-ui/Table";
 import Paper from "material-ui/Paper";
 import Typography from "material-ui/Typography";
+import Grid from "material-ui/Grid";
 
 const style = {
   paper: {
