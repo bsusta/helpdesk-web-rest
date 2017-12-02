@@ -103,7 +103,7 @@ class Dashboard extends Component {
                     </TableCell>
                     <TableCell style={style.smallTableCell}>Company</TableCell>
                     <TableCell style={style.smallTableCell}>Asignee</TableCell>
-                    <TableCell style={style.smallTableCell}>Created</TableCell>
+                    <TableCell style={style.smallTableCell}>Due_Date</TableCell>
                     <TableCell style={style.smallTableCell}>Deadline</TableCell>
                     <TableCell style={style.smallTableCell}>Status</TableCell>
                   </TableRow>
@@ -118,7 +118,7 @@ class Dashboard extends Component {
                     <TableCell>Requester</TableCell>
                     <TableCell>Company</TableCell>
                     <TableCell>Asignee</TableCell>
-                    <TableCell>Created</TableCell>
+                    <TableCell>Due_Date</TableCell>
                     <TableCell>Deadline</TableCell>
                     <TableCell>Status</TableCell>
                   </TableRow>
@@ -131,7 +131,7 @@ class Dashboard extends Component {
                     <TableCell>Requester</TableCell>
                     <TableCell>Company</TableCell>
                     <TableCell>Asignee</TableCell>
-                    <TableCell>Created</TableCell>
+                    <TableCell>Due_Date</TableCell>
                     <TableCell>Deadline</TableCell>
                     <TableCell>Status</TableCell>
                   </TableRow>
@@ -144,7 +144,7 @@ class Dashboard extends Component {
                     <TableCell>Requester</TableCell>
                     <TableCell>Company</TableCell>
                     <TableCell>Asignee</TableCell>
-                    <TableCell>Created</TableCell>
+                    <TableCell>Due_Date</TableCell>
                     <TableCell>Deadline</TableCell>
                     <TableCell>Status</TableCell>
                   </TableRow>
