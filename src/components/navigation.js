@@ -19,6 +19,8 @@ import Attributes from "./settings/task-attributes";
 import Units from "./settings/units";
 import Users from "./settings/users";
 
+import NewTask from "./newTask";
+
 class Navigation extends Component {
   render() {
     return (
@@ -41,6 +43,7 @@ class Navigation extends Component {
                 <Route exact path="/settings/task-attributes/" component={Attributes} />
                 <Route exact path="/settings/units/" component={Units} />
                 <Route exact path="/settings/users/" component={Users} />
+                <Route exact path="/newTask" component={NewTask} />
               </Switch>
             </div>
           </div>
