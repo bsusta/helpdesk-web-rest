@@ -11,6 +11,7 @@ import TextField from "material-ui/TextField";
 import SearchIcon from "material-ui-icons/Search";
 import Avatar from "material-ui/Avatar";
 import deepOrange from "material-ui/colors/deepOrange";
+import Button from 'material-ui/Button';
 
 import { Link } from "react-router-dom";
 
@@ -48,8 +49,13 @@ class Topbar extends Component {
             color="contrast"
             aria-label="Menu"
           >
-          <SearchIcon             style={{paddingTop:0}}/>
+          <SearchIcon style={{paddingTop:0}}/>
           </IconButton>
+          <Link to="/newTask" style={{ align: "Right", textDecoration:'none' }}>
+          <Button color="contrast">
+            New Task
+          </Button>
+          </Link>
           <Typography type="title" color="inherit" style={{flex:1}}>
           </Typography>
 
