@@ -19,7 +19,9 @@ import ExpandLess from "material-ui-icons/ExpandLess";
 import ExpandMore from "material-ui-icons/ExpandMore";
 import Collapse from "material-ui/transitions/Collapse";
 import StarBorder from "material-ui-icons/StarBorder";
+import LabelIcon from "material-ui-icons/LabelOutline";
 import { setSidebar } from "../../redux/actions";
+import BigSidebar from "./bigSidebar";
 
 const styles = theme => ({
   drawerPaper: {
@@ -48,7 +50,13 @@ const styles = theme => ({
 });
 
 class Sidebar extends Component {
-  state = { open: true };
+  state = {
+    open: true,
+    openFilters: true,
+    openFolders: true,
+    openLabels: true,
+    openArchived: true
+  };
 
   handleClick = () => {
     this.setState({ open: !this.state.open });
@@ -67,178 +75,7 @@ class Sidebar extends Component {
           )
         }}
       >
-        <div>
-          <Link style={{ textDecoration: "none" }} to="/">
-            <div
-              style={{
-                background: "#3f51b5",
-                height: 64,
-                display: "flex",
-                alignItems: "center"
-              }}
-            >
-              <Typography
-                type="title"
-                style={{
-                  color: "white",
-
-                  paddingLeft: 16
-                }}
-              >
-                LanHelpdesk
-              </Typography>
-            </div>
-          </Link>
-          <List style={{ paddingBottom: 0, paddingTop: 0 }}>
-            {/*Filters List*/}
-
-            <ListItem
-              button
-              onClick={this.handleClick}
-              style={{ paddingTop: 8, paddingBottom: 8 }}
-            >
-              <ListItemIcon style={{ marginRight: 8 }}>
-                <FilterIcon />
-              </ListItemIcon>
-              <ListItemText
-                style={{ paddingLeft: 0, fontSize: "0.5rem" }}
-                primary="Filters"
-              />
-              {this.state.open ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse
-              component="li"
-              in={this.state.open}
-              timeout="auto"
-              unmountOnExit
-            >
-              <List disablePadding>
-                <ListItem
-                  button
-                  className={classes.nested}
-                  style={{ paddingTop: 8, paddingBottom: 8 }}
-                >
-                  <ListItemIcon style={{ marginRight: 8 }}>
-                    <PlayIcon />
-                  </ListItemIcon>
-                  <ListItemText style={{ padding: 0 }} inset primary="Riešiť" />
-                </ListItem>
-              </List>
-            </Collapse>
-            <Divider />
-            {/*Folders List*/}
-            <ListItem
-              button
-              onClick={this.handleClick}
-              style={{ paddingTop: 8, paddingBottom: 8 }}
-            >
-              <ListItemText
-                style={{ paddingLeft: 0, fontSize: "0.5rem" }}
-                primary="Folders"
-              />
-              <AddIcon />
-            </ListItem>
-            <Collapse
-              component="li"
-              in={this.state.open}
-              timeout="auto"
-              unmountOnExit
-            >
-              <List disablePadding>
-                <ListItem
-                  button
-                  className={classes.nested}
-                  style={{ paddingTop: 8, paddingBottom: 8 }}
-                >
-                  <ListItemIcon style={{ marginRight: 8 }}>
-                    <FolderIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    style={{ padding: 0 }}
-                    inset
-                    primary="Folder 1"
-                  />
-                </ListItem>
-              </List>
-            </Collapse>
-            <Divider />
-
-            {/*Tags List*/}
-            <ListItem
-              button
-              onClick={this.handleClick}
-              style={{ paddingTop: 8, paddingBottom: 8 }}
-            >
-              <ListItemText
-                style={{ paddingLeft: 0, fontSize: "0.5rem" }}
-                primary="Filters"
-              />
-              <AddIcon />
-            </ListItem>
-            <Collapse
-              component="li"
-              in={this.state.open}
-              timeout="auto"
-              unmountOnExit
-            >
-              <List disablePadding>
-                <ListItem
-                  button
-                  className={classes.nested}
-                  style={{ paddingTop: 8, paddingBottom: 8 }}
-                >
-                  <ListItemText
-                    style={{
-                      paddingLeft: 4,
-                      backgroundColor: "blue",
-                      color: "white"
-                    }}
-                    primary="Tag 1"
-                  />
-                </ListItem>
-              </List>
-            </Collapse>
-            <Divider />
-
-            {/*Archived List*/}
-
-            <ListItem
-              button
-              onClick={this.handleClick}
-              style={{ paddingTop: 8, paddingBottom: 8 }}
-            >
-              <ListItemText
-                style={{ paddingLeft: 0, fontSize: "0.5rem" }}
-                primary="Archived"
-              />
-              <AddIcon />
-            </ListItem>
-            <Collapse
-              component="li"
-              in={this.state.open}
-              timeout="auto"
-              unmountOnExit
-            >
-              <List disablePadding>
-                <ListItem
-                  button
-                  className={classes.nested}
-                  style={{ paddingTop: 8, paddingBottom: 8 }}
-                >
-                  <ListItemIcon style={{ marginRight: 8 }}>
-                    <ArchiveIcon />
-                  </ListItemIcon>
-                  <ListItemText
-                    style={{ padding: 0 }}
-                    inset
-                    primary="Folder 2"
-                  />
-                </ListItem>
-              </List>
-            </Collapse>
-            <Divider />
-          </List>
-        </div>
+        {this.props.open && <BigSidebar />}
       </Drawer>
     );
   }

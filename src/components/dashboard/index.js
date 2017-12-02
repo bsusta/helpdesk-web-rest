@@ -25,7 +25,9 @@ const style = {
     width: "1%"
   },
   paper: {
-    padding: 15
+    padding: 15,
+    overflowX: "auto",
+    marginLeft: 1
   },
   paperHeading: {
     paddingLeft: 16
@@ -35,44 +37,42 @@ const style = {
 class Dashboard extends Component {
   render() {
     return (
-      <div>
+      <div style={{}}>
         <Grid container spacing={0}>
           {this.props.openFilter && (
-            <Grid item xs={3}>
-              <Paper style={style.paper}>
-                <Typography gutterBottom type="headline">
-                  Filter
-                </Typography>
-                <Button color="primary">Filter</Button>
-                <Button color="primary">Save</Button>
-                <Button color="primary">Reset</Button>
-                <form>
-                  <TextField
-                    id="full-width"
-                    label="Task name"
-                    InputLabelProps={{
-                      shrink: true
-                    }}
-                    fullWidth
-                    margin="normal"
-                  />
-                  <Divider />
-                  <Button
-                    ref={node => {
-                      this.button = node;
-                    }}
-                    onClick={this.handleClickButton}
-                    color="primary"
-                  >
-                    Add Status
-                  </Button>
-                  <Popover>Status</Popover>
-                  <Divider />
-                </form>
-              </Paper>
-            </Grid>
+            <Paper style={style.paper}>
+              <Typography gutterBottom type="headline">
+                Filter
+              </Typography>
+              <Button color="primary">Filter</Button>
+              <Button color="primary">Save</Button>
+              <Button color="primary">Reset</Button>
+              <form>
+                <TextField
+                  id="full-width"
+                  label="Task name"
+                  InputLabelProps={{
+                    shrink: true
+                  }}
+                  fullWidth
+                  margin="normal"
+                />
+                <Divider />
+                <Button
+                  ref={node => {
+                    this.button = node;
+                  }}
+                  onClick={this.handleClickButton}
+                  color="primary"
+                >
+                  Add Status
+                </Button>
+                <Popover>Status</Popover>
+                <Divider />
+              </form>
+            </Paper>
           )}
-          <Grid item xs={this.props.openFilter ? 9 : 12}>
+          <Grid item xs style={{ overflowX: "auto" }}>
             <Paper style={style.paper}>
               <Typography
                 style={style.paperHeading}
