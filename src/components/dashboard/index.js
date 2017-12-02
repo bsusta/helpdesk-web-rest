@@ -17,6 +17,7 @@ import Divider from "material-ui/Divider";
 import Grid from "material-ui/Grid";
 import TextField from "material-ui/TextField";
 import Popover from "material-ui/Popover";
+import AddIcon from "material-ui-icons/Add";
 
 const style = {
   smallTableCell: {
@@ -34,7 +35,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Grid container >
+        <Grid container spacing={0}>
           <Grid item xs={3}>
             <Paper style={style.paper}>
               <Typography gutterBottom type="headline">
@@ -75,7 +76,7 @@ class Dashboard extends Component {
                 gutterBottom
                 type="headline"
               >
-                Dashboard
+                Tasks List
               </Typography>
               <Button color="primary">Filter</Button>
               <Button color="primary">Delete</Button>
@@ -87,28 +88,16 @@ class Dashboard extends Component {
                     <TableCell style={style.smallTableCell}>
                       <Checkbox />
                     </TableCell>
-                    <TableCell style={style.smallTableCell}>
-                      Key
-                    </TableCell>
+                    <TableCell style={style.smallTableCell}>Key</TableCell>
                     <TableCell>Title</TableCell>
                     <TableCell style={style.smallTableCell}>
                       Requester
                     </TableCell>
-                    <TableCell style={style.smallTableCell}>
-                      Company
-                    </TableCell>
-                    <TableCell style={style.smallTableCell}>
-                      Asignee
-                    </TableCell>
-                    <TableCell style={style.smallTableCell}>
-                      Created
-                    </TableCell>
-                    <TableCell style={style.smallTableCell}>
-                      Deadline
-                    </TableCell>
-                    <TableCell style={style.smallTableCell}>
-                      Status
-                    </TableCell>
+                    <TableCell style={style.smallTableCell}>Company</TableCell>
+                    <TableCell style={style.smallTableCell}>Asignee</TableCell>
+                    <TableCell style={style.smallTableCell}>Created</TableCell>
+                    <TableCell style={style.smallTableCell}>Deadline</TableCell>
+                    <TableCell style={style.smallTableCell}>Status</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -154,7 +143,12 @@ class Dashboard extends Component {
                 </TableBody>
                 <TableFooter>
                   <TableRow>
-                    <TablePagination count="100" rowsPerPage="10" page="100" onChangePage={()=>console.log("change")} />
+                    <TablePagination
+                      count="100"
+                      rowsPerPage="10"
+                      page="100"
+                      onChangePage={() => console.log("change")}
+                    />
                   </TableRow>
                 </TableFooter>
               </Table>
