@@ -9,6 +9,7 @@ import DraftsIcon from "material-ui-icons/Drafts";
 import classNames from "classnames";
 import { withStyles } from "material-ui/styles";
 import Typography from "material-ui/Typography";
+import { Link } from "react-router-dom";
 
 import { setSidebar } from "../../redux/actions";
 
@@ -52,26 +53,28 @@ class Sidebar extends Component {
           )
         }}
       >
-        <div>
-          <div
-            style={{
-              background: "#3f51b5",
-              height: 64,
-              display: "flex",
-              alignItems: "center"
-            }}
-          >
-            <Typography
-              type="title"
+          <div>
+          <Link style={{textDecoration:"none"}} to="/">
+            <div
               style={{
-                color: "white",
-
-                paddingLeft: 16
+                background: "#3f51b5",
+                height: 64,
+                display: "flex",
+                alignItems: "center",
               }}
             >
-              LanHelpdesk
-            </Typography>
-          </div>
+              <Typography
+                type="title"
+                style={{
+                  color: "white",
+
+                  paddingLeft: 16
+                }}
+              >
+                LanHelpdesk
+              </Typography>
+            </div>
+          </Link>
           <List>
             <ListItem button>
               <ListItemIcon>

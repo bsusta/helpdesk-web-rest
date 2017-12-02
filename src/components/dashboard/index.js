@@ -34,7 +34,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <Grid container spacing={4}>
+        <Grid container >
           <Grid item xs={3}>
             <Paper style={style.paper}>
               <Typography gutterBottom type="headline">
@@ -84,77 +84,77 @@ class Dashboard extends Component {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell style={style.smallTableCell} padding="checkbox">
+                    <TableCell style={style.smallTableCell}>
                       <Checkbox />
                     </TableCell>
-                    <TableCell style={style.smallTableCell} padding="checkbox">
+                    <TableCell style={style.smallTableCell}>
                       Key
                     </TableCell>
                     <TableCell>Title</TableCell>
-                    <TableCell style={style.smallTableCell} padding="numeric">
+                    <TableCell style={style.smallTableCell}>
                       Requester
                     </TableCell>
-                    <TableCell style={style.smallTableCell} padding="numeric">
+                    <TableCell style={style.smallTableCell}>
                       Company
                     </TableCell>
-                    <TableCell style={style.smallTableCell} padding="numeric">
+                    <TableCell style={style.smallTableCell}>
                       Asignee
                     </TableCell>
-                    <TableCell style={style.smallTableCell} padding="numeric">
+                    <TableCell style={style.smallTableCell}>
                       Created
                     </TableCell>
-                    <TableCell style={style.smallTableCell} padding="numeric">
+                    <TableCell style={style.smallTableCell}>
                       Deadline
                     </TableCell>
-                    <TableCell style={style.smallTableCell} padding="numeric">
+                    <TableCell style={style.smallTableCell}>
                       Status
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell padding="checkbox">
+                    <TableCell>
                       <Checkbox />
                     </TableCell>
-                    <TableCell padding="checkbox">Key</TableCell>
+                    <TableCell>Key</TableCell>
                     <TableCell>Title</TableCell>
-                    <TableCell padding="numeric">Requester</TableCell>
-                    <TableCell padding="numeric">Company</TableCell>
-                    <TableCell padding="numeric">Asignee</TableCell>
-                    <TableCell padding="numeric">Created</TableCell>
-                    <TableCell padding="numeric">Deadline</TableCell>
-                    <TableCell padding="numeric">Status</TableCell>
+                    <TableCell>Requester</TableCell>
+                    <TableCell>Company</TableCell>
+                    <TableCell>Asignee</TableCell>
+                    <TableCell>Created</TableCell>
+                    <TableCell>Deadline</TableCell>
+                    <TableCell>Status</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell padding="checkbox">
+                    <TableCell>
                       <Checkbox />
                     </TableCell>
-                    <TableCell padding="checkbox">Key</TableCell>
+                    <TableCell>Key</TableCell>
                     <TableCell>Title</TableCell>
-                    <TableCell padding="numeric">Requester</TableCell>
-                    <TableCell padding="numeric">Company</TableCell>
-                    <TableCell padding="numeric">Asignee</TableCell>
-                    <TableCell padding="numeric">Created</TableCell>
-                    <TableCell padding="numeric">Deadline</TableCell>
-                    <TableCell padding="numeric">Status</TableCell>
+                    <TableCell>Requester</TableCell>
+                    <TableCell>Company</TableCell>
+                    <TableCell>Asignee</TableCell>
+                    <TableCell>Created</TableCell>
+                    <TableCell>Deadline</TableCell>
+                    <TableCell>Status</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell padding="checkbox">
+                    <TableCell>
                       <Checkbox />
                     </TableCell>
-                    <TableCell padding="checkbox">Key</TableCell>
+                    <TableCell>Key</TableCell>
                     <TableCell>Title</TableCell>
-                    <TableCell padding="numeric">Requester</TableCell>
-                    <TableCell padding="numeric">Company</TableCell>
-                    <TableCell padding="numeric">Asignee</TableCell>
-                    <TableCell padding="numeric">Created</TableCell>
-                    <TableCell padding="numeric">Deadline</TableCell>
-                    <TableCell padding="numeric">Status</TableCell>
+                    <TableCell>Requester</TableCell>
+                    <TableCell>Company</TableCell>
+                    <TableCell>Asignee</TableCell>
+                    <TableCell>Created</TableCell>
+                    <TableCell>Deadline</TableCell>
+                    <TableCell>Status</TableCell>
                   </TableRow>
                 </TableBody>
                 <TableFooter>
                   <TableRow>
-                    <TablePagination count="100" rowsPerPage="10" page="100" />
+                    <TablePagination count="100" rowsPerPage="10" page="100" onChangePage={()=>console.log("change")} />
                   </TableRow>
                 </TableFooter>
               </Table>

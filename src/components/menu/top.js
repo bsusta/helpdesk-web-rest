@@ -7,9 +7,13 @@ import Typography from "material-ui/Typography";
 import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import SettingsIcon from "material-ui-icons/Settings";
-import { Link } from "react-router-dom";
+import TextField from "material-ui/TextField";
+import SearchIcon from "material-ui-icons/Search";
 import Avatar from "material-ui/Avatar";
 import deepOrange from "material-ui/colors/deepOrange";
+
+import { Link } from "react-router-dom";
+
 import { setSidebar } from "./../../redux/actions";
 
 const styles = {
@@ -34,6 +38,20 @@ class Topbar extends Component {
           >
             <MenuIcon />
           </IconButton>
+          <TextField
+            id="search"
+            label=""
+            style={{backgroundColor:'white'}}
+          />
+
+          <IconButton
+            color="contrast"
+            aria-label="Menu"
+          >
+          <SearchIcon             style={{paddingTop:0}}/>
+          </IconButton>
+          <Typography type="title" color="inherit" style={{flex:1}}>
+          </Typography>
 
           <Link to="/settings" style={{ align: "Right" }}>
             <IconButton color="contrast" aria-label="Menu">
