@@ -91,16 +91,20 @@ class Sidebar extends Component {
           </Link>
           <List style={{ paddingBottom: 0, paddingTop: 0 }}>
             {/*Filters List*/}
+
             <ListItem
               button
               onClick={this.handleClick}
               style={{ paddingTop: 8, paddingBottom: 8 }}
             >
+              <ListItemIcon style={{ marginRight: 8 }}>
+                <FilterIcon />
+              </ListItemIcon>
               <ListItemText
                 style={{ paddingLeft: 0, fontSize: "0.5rem" }}
                 primary="Filters"
               />
-              <AddIcon />
+              {this.state.open ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
             <Collapse
               component="li"
@@ -183,7 +187,14 @@ class Sidebar extends Component {
                   className={classes.nested}
                   style={{ paddingTop: 8, paddingBottom: 8 }}
                 >
-                  <ListItemText style={{ padding: 0 }} primary="Tag 1" />
+                  <ListItemText
+                    style={{
+                      paddingLeft: 4,
+                      backgroundColor: "blue",
+                      color: "white"
+                    }}
+                    primary="Tag 1"
+                  />
                 </ListItem>
               </List>
             </Collapse>

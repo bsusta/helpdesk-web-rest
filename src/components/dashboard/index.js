@@ -18,6 +18,7 @@ import Grid from "material-ui/Grid";
 import TextField from "material-ui/TextField";
 import Popover from "material-ui/Popover";
 import AddIcon from "material-ui-icons/Add";
+import { showFilter } from "./../../redux/actions";
 
 const style = {
   smallTableCell: {
@@ -36,40 +37,42 @@ class Dashboard extends Component {
     return (
       <div>
         <Grid container spacing={0}>
-          <Grid item xs={3}>
-            <Paper style={style.paper}>
-              <Typography gutterBottom type="headline">
-                Filter
-              </Typography>
-              <Button color="primary">Filter</Button>
-              <Button color="primary">Save</Button>
-              <Button color="primary">Reset</Button>
-              <form>
-                <TextField
-                  id="full-width"
-                  label="Task name"
-                  InputLabelProps={{
-                    shrink: true
-                  }}
-                  fullWidth
-                  margin="normal"
-                />
-                <Divider />
-                <Button
-                  ref={node => {
-                    this.button = node;
-                  }}
-                  onClick={this.handleClickButton}
-                  color="primary"
-                >
-                  Add Status
-                </Button>
-                <Popover>Status</Popover>
-                <Divider />
-              </form>
-            </Paper>
-          </Grid>
-          <Grid item xs={9}>
+          {this.props.openFilter && (
+            <Grid item xs={3}>
+              <Paper style={style.paper}>
+                <Typography gutterBottom type="headline">
+                  Filter
+                </Typography>
+                <Button color="primary">Filter</Button>
+                <Button color="primary">Save</Button>
+                <Button color="primary">Reset</Button>
+                <form>
+                  <TextField
+                    id="full-width"
+                    label="Task name"
+                    InputLabelProps={{
+                      shrink: true
+                    }}
+                    fullWidth
+                    margin="normal"
+                  />
+                  <Divider />
+                  <Button
+                    ref={node => {
+                      this.button = node;
+                    }}
+                    onClick={this.handleClickButton}
+                    color="primary"
+                  >
+                    Add Status
+                  </Button>
+                  <Popover>Status</Popover>
+                  <Divider />
+                </form>
+              </Paper>
+            </Grid>
+          )}
+          <Grid item xs={this.props.openFilter ? 9 : 12}>
             <Paper style={style.paper}>
               <Typography
                 style={style.paperHeading}
@@ -78,7 +81,12 @@ class Dashboard extends Component {
               >
                 Tasks List
               </Typography>
-              <Button color="primary">Filter</Button>
+              <Button
+                onClick={() => this.props.showFilter(!this.props.openFilter)}
+                color="primary"
+              >
+                Show Filter
+              </Button>
               <Button color="primary">Delete</Button>
               <Button color="primary">Bulk Actions</Button>
 
@@ -160,8 +168,9 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = ({}) => {
-  return {};
+const mapStateToProps = ({ filter }) => {
+  const { openFilter } = filter;
+  return { openFilter };
 };
 
-export default connect(mapStateToProps, {})(Dashboard);
+export default connect(mapStateToProps, { showFilter })(Dashboard);
